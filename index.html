@@ -5,78 +5,76 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Major Lemos Imóveis</title>
   <!-- Importa a fonte Montserrat -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <!-- Nosso CSS -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- Cabeçalho Moderno -->
-  <header class="site-header">
-    <div class="container header-content">
-      <!-- Canto Esquerdo: Imagem da logo (ou outra) -->
+  <!-- Cabeçalho Moderno e Fixo -->
+  <header class="site-header" id="header">
+    <div class="header-content">
+      <!-- Logo Esquerda -->
       <div class="header-left">
         <img src="imageslogo.png" alt="Logo Esquerda" class="header-img" />
       </div>
-      <!-- Centro: Imagem central com o nome da empresa e slogan abaixo -->
+      
+      <!-- Centro: Logo e Slogan -->
       <div class="header-center">
-        <img src="imagescenter.png" alt="Logo Central" class="header-img" />
+        <img src="imagescenter.png" alt="Major Lemos Imóveis" class="header-img" />
         <p class="slogan">Segurança e confiança no mercado imobiliário.</p>
       </div>
-      <!-- Canto Direito: Imagem da imobiliária -->
-      <!-- (Parece estar faltando, pode adicionar aqui) -->
+      
+      <!-- Menu Desktop -->
+      <nav class="header-nav">
+        <a class="nav-link active" href="#" data-category="all">Todas</a>
+        <a class="nav-link" href="#" data-category="casas">Casas</a>
+        <a class="nav-link" href="#" data-category="terrenos">Terrenos</a>
+        <a class="nav-link" href="#" data-category="comerciais">Comerciais</a>
+        <a class="nav-link" href="#" data-category="fazendas">Fazendas</a>
+      </nav>
+      
+      <!-- Botão Menu Mobile -->
+      <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+        <span>☰ Menu</span>
+      </button>
+    </div>
+    
+    <!-- Menu Mobile -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a class="nav-link active" href="#" data-category="all">Todas</a>
+      <a class="nav-link" href="#" data-category="casas">Casas</a>
+      <a class="nav-link" href="#" data-category="terrenos">Terrenos</a>
+      <a class="nav-link" href="#" data-category="comerciais">Comerciais</a>
+      <a class="nav-link" href="#" data-category="fazendas">Fazendas</a>
     </div>
   </header>
 
-  <!-- Menu de Categorias -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container">
-      <a class="navbar-brand d-lg-none" href="#">Menu</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Alterna navegação"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav mx-auto">
-          <li class="nav-item"><a class="nav-link" href="#" data-category="all">Todas</a></li>
-          <li class="nav-item"><a class="nav-link" href="#" data-category="casas">Casas</a></li>
-          <li class="nav-item"><a class="nav-link" href="#" data-category="terrenos">Terrenos</a></li>
-          <li class="nav-item"><a class="nav-link" href="#" data-category="comerciais">Comerciais</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
   <!-- Seção de Imóveis (Cards) -->
-  <main class="container my-4">
-    <div class="row" id="property-list">
+  <main class="container main-container">
+    <div class="row g-4" id="property-list">
       <!-- Card 1: Chácara dos Sonhos -->
-      <div class="col-md-4 mb-4 property-card" data-category="casas">
-        <div class="card">
+      <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 property-card" data-category="casas">
+        <div class="card h-100">
           <img src="cha16.jpeg" class="card-img-top" alt="Chácara dos Sonhos" />
-          <div class="card-body">
+          <div class="card-body d-flex flex-column">
             <h5 class="card-title">Chácara dos Sonhos <small>(IM01)</small></h5>
-            <p class="card-text">
-              Área: 46.309 m² (aprox. 4,63 hectares). Casa com 3 quartos (2 suítes), 4 banheiros, sala, cozinha, varanda, fogão a lenha, churrasqueira, área para ferramentas, piscina (8.000 litros), casa de ração, galinheiro, sistema de água de queda livre, represa e tablado.
-            </p>
-            <p>03 opções de venda:</p>
-            <p>1️⃣ Sítio completo (toda a propriedade) – R$ 980.000</p>
-            <p>2️⃣ Área de 26.309m² com a sede – R$ 750.000</p>
-            <p>3️⃣ Área de 26.309m² sem a sede – R$ 500.000</p>
-            <p><strong>Valor: R$ 1.000.000,00</strong></p>
-            <div class="d-flex justify-content-between">
-              <a href="property1.html" class="btn btn-primary">Ver Mais</a>
+            <div class="card-text-content flex-grow-1">
+              <p class="card-text">
+                Área: 46.309 m² (aprox. 4,63 hectares). Casa com 3 quartos (2 suítes), 4 banheiros, sala, cozinha, varanda, fogão a lenha, churrasqueira, área para ferramentas, piscina (8.000 litros), casa de ração, galinheiro, sistema de água de queda livre, represa e tablado.
+              </p>
+              <p class="mb-2">03 opções de venda:</p>
+              <p class="mb-1">1️⃣ Sítio completo (toda a propriedade) – R$ 980.000</p>
+              <p class="mb-1">2️⃣ Área de 26.309m² com a sede – R$ 750.000</p>
+              <p class="mb-2">3️⃣ Área de 26.309m² sem a sede – R$ 500.000</p>
+              <p class="price"><strong>Valor: R$ 1.000.000,00</strong></p>
+            </div>
+            <div class="d-flex justify-content-between gap-2 mt-auto">
+              <a href="property1.html" class="btn btn-primary flex-fill">Ver Mais</a>
               <a
                 href="https://wa.me/5534984043807?text=Tenho%20interesse%20no%20im%C3%B3vel%20Ch%C3%A1cara%20dos%20Sonhos%20-%20IM01"
-                class="btn btn-success"
+                class="btn btn-success flex-fill"
                 target="_blank"
                 >Contato</a
               >
@@ -86,21 +84,22 @@
       </div>
 
       <!-- Card 2: Residência Central -->
-      <div class="col-md-4 mb-4 property-card" data-category="casas">
-        <div class="card">
+      <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 property-card" data-category="casas">
+        <div class="card h-100">
           <img src="casamajor.jpeg" class="card-img-top" alt="Residência Central" />
-          <div class="card-body">
+          <div class="card-body d-flex flex-column">
             <h5 class="card-title">Residência Central <small>(IM02)</small></h5>
-            <p class="card-text">
-              Terreno de 452,10 m². 4 quartos (2 suítes), duas salas com armários embutidos, cozinha, lavanderia, área de churrasqueira, garagem para 3 veículos, aquecedor solar, vídeo monitoramento e cerca elétrica.
-              <br />
-              <strong>Valor: R$ 1.300.000,00</strong>
-            </p>
-            <div class="d-flex justify-content-between">
-              <a href="property2.html" class="btn btn-primary">Ver Mais</a>
+            <div class="card-text-content flex-grow-1">
+              <p class="card-text">
+                Terreno de 452,10 m². 4 quartos (2 suítes), duas salas com armários embutidos, cozinha, lavanderia, área de churrasqueira, garagem para 3 veículos, aquecedor solar, vídeo monitoramento e cerca elétrica.
+              </p>
+              <p class="price"><strong>Valor: R$ 1.300.000,00</strong></p>
+            </div>
+            <div class="d-flex justify-content-between gap-2 mt-auto">
+              <a href="property2.html" class="btn btn-primary flex-fill">Ver Mais</a>
               <a
                 href="https://wa.me/5534984043807?text=Tenho%20interesse%20no%20im%C3%B3vel%20Resid%C3%AAncia%20Central%20-%20IM02"
-                class="btn btn-success"
+                class="btn btn-success flex-fill"
                 target="_blank"
                 >Contato</a
               >
@@ -110,21 +109,22 @@
       </div>
 
       <!-- Card 3: Ponto Comercial Estratégico -->
-      <div class="col-md-4 mb-4 property-card" data-category="comerciais">
-        <div class="card">
-          <img src="pc1.jpeg" class="card-img-top" alt="Ponto Comercial Estratégico" />
-          <div class="card-body">
+      <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 property-card" data-category="comerciais">
+        <div class="card h-100">
+          <img src="pc8.jpeg" class="card-img-top" alt="Ponto Comercial Estratégico" />
+          <div class="card-body d-flex flex-column">
             <h5 class="card-title">Ponto Comercial Estratégico <small>(IM03)</small></h5>
-            <p class="card-text">
-              Terreno de 222,90 m² com espaço comercial de 70 m² e uma residência nos fundos com 2 quartos, sala, copa, cozinha e lavanderia.
-              <br />
-              <strong>Valor: R$ 750.000,00</strong>
-            </p>
-            <div class="d-flex justify-content-between">
-              <a href="property3.html" class="btn btn-primary">Ver Mais</a>
+            <div class="card-text-content flex-grow-1">
+              <p class="card-text">
+                Terreno de 222,90 m² com espaço comercial de 70 m² e uma residência nos fundos com 2 quartos, sala, copa, cozinha e lavanderia.
+              </p>
+              <p class="price"><strong>Valor: R$ 750.000,00</strong></p>
+            </div>
+            <div class="d-flex justify-content-between gap-2 mt-auto">
+              <a href="property3.html" class="btn btn-primary flex-fill">Ver Mais</a>
               <a
                 href="https://wa.me/5534984043807?text=Tenho%20interesse%20no%20im%C3%B3vel%20Ponto%20Comercial%20Estrat%C3%A9gico%20-%20IM03"
-                class="btn btn-success"
+                class="btn btn-success flex-fill"
                 target="_blank"
                 >Contato</a
               >
@@ -134,21 +134,22 @@
       </div>
 
       <!-- Card 4: Casa no Francisco Duarte -->
-      <div class="col-md-4 mb-4 property-card" data-category="casas">
-        <div class="card">
+      <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 property-card" data-category="casas">
+        <div class="card h-100">
           <img src="fd1.jpeg" class="card-img-top" alt="Casa no Francisco Duarte" />
-          <div class="card-body">
+          <div class="card-body d-flex flex-column">
             <h5 class="card-title">Casa no Francisco Duarte <small>(IM04)</small></h5>
-            <p class="card-text">
-              Terreno de 240 m². Casa com 3 quartos, sala, cozinha, 1 banheiro, lavanderia e garagem para 1 veículo.
-              <br />
-              <strong>Valor: R$ 180.000,00</strong>
-            </p>
-            <div class="d-flex justify-content-between">
-              <a href="property4.html" class="btn btn-primary">Ver Mais</a>
+            <div class="card-text-content flex-grow-1">
+              <p class="card-text">
+                Terreno de 240 m². Casa com 3 quartos, sala, cozinha, 1 banheiro, lavanderia e garagem para 1 veículo.
+              </p>
+              <p class="price"><strong>Valor: R$ 180.000,00</strong></p>
+            </div>
+            <div class="d-flex justify-content-between gap-2 mt-auto">
+              <a href="property4.html" class="btn btn-primary flex-fill">Ver Mais</a>
               <a
                 href="https://wa.me/5534984043807?text=Tenho%20interesse%20no%20im%C3%B3vel%20Casa%20no%20Francisco%20Duarte%20-%20IM04"
-                class="btn btn-success"
+                class="btn btn-success flex-fill"
                 target="_blank"
                 >Contato</a
               >
@@ -158,21 +159,22 @@
       </div>
 
       <!-- Card 5: Terreno para Chácara no Galheiro -->
-      <div class="col-md-4 mb-4 property-card" data-category="terrenos">
-        <div class="card">
+      <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 property-card" data-category="terrenos">
+        <div class="card h-100">
           <img src="galheiro1.jpeg" class="card-img-top" alt="Terreno para Chácara no Galheiro" />
-          <div class="card-body">
+          <div class="card-body d-flex flex-column">
             <h5 class="card-title">Terreno para Chácara no Galheiro <small>(IM05)</small></h5>
-            <p class="card-text">
-              Área total de 6.000 m², com 3.000 m² disponíveis para construção e 2.800 m² de área verde com represa.
-              <br />
-              <strong>Valor: R$ 80.000,00</strong>
-            </p>
-            <div class="d-flex justify-content-between">
-              <a href="property5.html" class="btn btn-primary">Ver Mais</a>
+            <div class="card-text-content flex-grow-1">
+              <p class="card-text">
+                Área total de 6.000 m², com 3.000 m² disponíveis para construção e 2.800 m² de área verde com represa.
+              </p>
+              <p class="price"><strong>Valor: R$ 80.000,00</strong></p>
+            </div>
+            <div class="d-flex justify-content-between gap-2 mt-auto">
+              <a href="property5.html" class="btn btn-primary flex-fill">Ver Mais</a>
               <a
                 href="https://wa.me/5534984043807?text=Tenho%20interesse%20no%20im%C3%B3vel%20Terreno%20para%20Ch%C3%A1cara%20no%20Galheiro%20-%20IM05"
-                class="btn btn-success"
+                class="btn btn-success flex-fill"
                 target="_blank"
                 >Contato</a
               >
@@ -182,21 +184,22 @@
       </div>
 
       <!-- Card 6: Terreno no Bairro Novo São Geraldo -->
-      <div class="col-md-4 mb-4 property-card" data-category="terrenos">
-        <div class="card">
+      <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 property-card" data-category="terrenos">
+        <div class="card h-100">
           <img src="t1.jpeg" class="card-img-top" alt="Terreno no Bairro Novo São Geraldo" />
-          <div class="card-body">
+          <div class="card-body d-flex flex-column">
             <h5 class="card-title">Terreno no Bairro Novo São Geraldo <small>(IM06)</small></h5>
-            <p class="card-text">
-              Terreno de 290,78 m², totalmente cercado, em localização privilegiada.
-              <br />
-              <strong>Valor: R$ 120.000,00</strong>
-            </p>
-            <div class="d-flex justify-content-between">
-              <a href="property6.html" class="btn btn-primary">Ver Mais</a>
+            <div class="card-text-content flex-grow-1">
+              <p class="card-text">
+                Terreno de 290,78 m², totalmente cercado, em localização privilegiada.
+              </p>
+              <p class="price"><strong>Valor: R$ 120.000,00</strong></p>
+            </div>
+            <div class="d-flex justify-content-between gap-2 mt-auto">
+              <a href="property6.html" class="btn btn-primary flex-fill">Ver Mais</a>
               <a
                 href="https://wa.me/5534984043807?text=Tenho%20interesse%20no%20im%C3%B3vel%20Terreno%20no%20Bairro%20Novo%20S%C3%A3o%20Geraldo%20-%20IM06"
-                class="btn btn-success"
+                class="btn btn-success flex-fill"
                 target="_blank"
                 >Contato</a
               >
@@ -206,20 +209,52 @@
       </div>
 
       <!-- Card 7: Casa - Vila São Pedro -->
-      <div class="col-md-4 mb-4 property-card" data-category="casas">
-        <div class="card">
+      <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 property-card" data-category="casas">
+        <div class="card h-100">
           <img src="vl1.jpeg" class="card-img-top" alt="Casa - Vila São Pedro" />
-          <div class="card-body">
+          <div class="card-body d-flex flex-column">
             <h5 class="card-title">Casa - Vila São Pedro <small>(IM07)</small></h5>
-            <p class="card-text">
-              Terreno - 504m² - Localizada em área Central<br />
-              <strong>Valor: R$ 800.000,00</strong>
-            </p>
-            <div class="d-flex justify-content-between">
-              <a href="property7.html" class="btn btn-primary">Ver Mais</a>
+            <div class="card-text-content flex-grow-1">
+              <p class="card-text">
+                Terreno - 504m² - Localizada em área Central
+              </p>
+              <p class="price"><strong>Valor: R$ 800.000,00</strong></p>
+            </div>
+            <div class="d-flex justify-content-between gap-2 mt-auto">
+              <a href="property7.html" class="btn btn-primary flex-fill">Ver Mais</a>
               <a
                 href="https://wa.me/5534984043807?text=Tenho%20interesse%20no%20im%C3%B3vel%20Casa%20-%20Vila%20S%C3%A3o%20Pedro%20-%20IM07"
-                class="btn btn-success"
+                class="btn btn-success flex-fill"
+                target="_blank"
+                >Contato</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 8: Fazenda de Dupla Aptidão à Venda – Minas Gerais -->
+      <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 property-card" data-category="fazendas">
+        <div class="card h-100">
+          <img src="FAZENDAIBIA (5).jpeg" class="card-img-top" alt="Fazenda de Dupla Aptidão" />
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Fazenda de Dupla Aptidão à Venda – Minas Gerais <small>(IM08)</small></h5>
+            <div class="card-text-content flex-grow-1">
+              <p class="card-text">
+                <strong>Área do terreno:</strong> 114 hectares<br>
+                <strong>Área para lavoura:</strong> 60 hectares para café, milho, soja e feijão<br>
+                <strong>Pastagens:</strong> Formadas para pecuária<br>
+                <strong>Recursos hídricos:</strong> 2 nascentes e represa<br>
+                <strong>Casa sede:</strong> Ampla, com varanda<br>
+                <strong>Localização:</strong> 10 km de Pratinha, 40 km de Ibiá e 80 km de Araxá<br>
+              </p>
+              <p class="price"><strong>Valor: R$ 3.850.000,00</strong></p>
+            </div>
+            <div class="d-flex justify-content-between gap-2 mt-auto">
+              <a href="property8.html" class="btn btn-primary flex-fill">Ver Mais</a>
+              <a
+                href="https://wa.me/5534984043807?text=Tenho%20interesse%20na%20Fazenda%20Dupla%20Aptid%C3%A3o%20-%20IM08"
+                class="btn btn-success flex-fill"
                 target="_blank"
                 >Contato</a
               >
@@ -230,7 +265,7 @@
     </div>
   </main>
 
-  <!-- Bootstrap JS Bundle e nosso script -->
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="script.js"></script>
 </body>
